@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceEnemy : MonoBehaviour
+public class EnemyPlace : MonoBehaviour
 {
-    [SerializeField] private GameObject _cube;
+    [SerializeField] private GameObject _enemy;
     [SerializeField] private Transform _path;
 
     private Transform[] _points;
@@ -28,7 +28,7 @@ public class PlaceEnemy : MonoBehaviour
 
         for (int i = 0; i < spawnCount; i++)
         {
-            GameObject gameObject = Instantiate(_cube, _points[i].position, Quaternion.identity);
+            GameObject gameObject = Instantiate(_enemy, _points[i].position, Quaternion.identity);
             yield return waitForTwoSeconds;
         }
 
